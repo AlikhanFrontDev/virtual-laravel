@@ -1,69 +1,70 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Cloud-Oriented Web Application Documentation
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Introduction
+This documentation provides an overview of the cloud-oriented web application developed by Alikhon Hasankhonov (student Id: 48594), Khusan Khukumov (student Id: 48594) and Erali Choriyev (student Id: 48592) as part of their project to make the world a better place. The project utilizes PHP, MySQL, Redis, and Laravel framework to create a web application aimed at providing a useful platform for users.
 
-## About Laravel
+## Installation
+1. **Download Docker Desktop**: Install Docker Desktop from [here](https://www.docker.com/products/docker-desktop/).
+2. **Install Ubuntu**: Follow the instructions [here](https://ubuntu.com/tutorials/install-ubuntu-desktop#7-ready-to-install) to install Ubuntu.
+3. **Run Docker**: Run Docker on your system.
+4. **Set Permissions**:
+   - Before starting Docker containers, ensure that the project directory has the correct permissions. Run the following command in Ubuntu to set permissions recursively:
+     ```bash
+     chmod -R 755 .
+     ```
+   - This command will ensure that all files and directories in the project directory have the appropriate permissions for execution.
+5. **Start Docker Containers**:
+   - Navigate to the project directory.
+   - Run the following command in Ubuntu to start Docker containers and install dependencies:
+     ```bash
+     ./vendor/bin/sail up
+     ```
+   - This command will install the project and its dependencies using Laravel Sail, which provides a Docker-powered local development environment.
+   - Close the terminal window after the containers are up and running by pressing `Ctrl + C`.
+6. **Run Docker Compose**:
+   - After closing the terminal, run the following command to start the containers again using Docker Compose:
+     ```bash
+     docker-compose up
+     ```
+   - This command will ensure that your Docker containers continue to run in the background.
+7. **Run Database Migrations and Seed Data**:
+   - Once the containers are up and running, run the following command in a separate Ubuntu terminal to migrate the database schema and seed it with initial data:
+     ```bash
+     php artisan migrate --seed
+     ```
+   - This command will ensure that your database is properly configured and populated with the necessary data for the application to function.
+9. **Open Localhost**:
+   - Once everything is set up, open your web browser and go to `http://localhost` to access the running project.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Project Structure
+The project utilizes Docker containers to manage its components. The key components include:
+- **PHP**: The PHP backend is powered by Laravel framework.
+- **MySQL**: The database management system used for storing application data.
+- **Redis**: Redis is used for caching purposes.
+- **phpMyAdmin**: A web-based MySQL database administration tool.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Usage
+1. **Accessing phpMyAdmin**:
+   - Access phpMyAdmin using the following URL: `http://localhost:8001`.
+   - Use the following credentials to login:
+     - Username: `sail`
+     - Password: `password`
+2. **Database Structure**:
+   - The database includes tables for user registration and book management.
+   - Additional tables can be created as needed.
+3. **Seed Database**:
+   - Populate the database with fake data using the following command: `php artisan db:seed`.
+   - An admin user is created with the following credentials:
+     - Email: `admin@domain.com`
+     - Password: `password`
+4. **Web Application Features**:
+   - The web application provides functionality for viewing, creating, editing, and deleting books.
+   - Admin users can manage books through the provided interface.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Additional Functionalities
+The project can be extended with additional functionalities as needed. Examples include user authentication, authorization, and more.
 
-## Learning Laravel
+## Conclusion
+The cloud-oriented web application developed by Alikhon Hasankhonov (student Id: 48594), Khusan Khukumov (student Id: 48594) and Erali Choriyev (student Id: 48592) aims to provide a useful platform for managing books. The application utilizes modern technologies such as PHP, MySQL, Redis, and Laravel framework, and is hosted on Docker containers for easy deployment and scalability.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# virtual-laravel
-# virtual-laravel
-# virtual-laravel
